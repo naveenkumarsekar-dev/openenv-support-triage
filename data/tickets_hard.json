@@ -1,0 +1,62 @@
+[
+  {
+    "id": "ticket_h001",
+    "text": "Your API failed during our Black Friday sale. We are losing $10k per hour. Need immediate fix ASAP!",
+    "customer_tier": "enterprise",
+    "timestamp": 1
+  },
+  {
+    "id": "ticket_h002",
+    "text": "Hi, I think I was overcharged but also my account got locked. Not sure what's going on. Also need a refund.",
+    "customer_tier": "pro",
+    "timestamp": 2
+  },
+  {
+    "id": "ticket_h003",
+    "text": "This is unacceptable service. Nothing works. It's completely broken. Need it fixed urgently.",
+    "customer_tier": "free",
+    "timestamp": 3
+  },
+  {
+    "id": "ticket_h004",
+    "text": "We are evaluating your platform for enterprise use. Need SLA details, uptime guarantees, and pricing information.",
+    "customer_tier": "enterprise",
+    "timestamp": 4
+  },
+  {
+    "id": "ticket_h005",
+    "text": "My system shows error 503 sometimes but then works. Not sure if it's on your side or ours... still happening frequently though.",
+    "customer_tier": "pro",
+    "timestamp": 5
+  },
+  {
+    "id": "ticket_h006",
+    "text": "Database connection failed in production. Site is down. This is critical - need immediate attention!",
+    "customer_tier": "enterprise",
+    "timestamp": 6
+  },
+  {
+    "id": "ticket_h007",
+    "text": "Can I get money back? The service hasn't been working reliably. Refund request for my last month's payment.",
+    "customer_tier": "pro",
+    "timestamp": 7
+  },
+  {
+    "id": "ticket_h008",
+    "text": "FREE MONEY!! GET PAID NOW!!! Work from home!! BUY VIAGRA!! LIMITED TIME OFFER!!! CLICK HERE!!!",
+    "customer_tier": "free",
+    "timestamp": 8
+  },
+  {
+    "id": "ticket_h009",
+    "text": "The dashboard seems slow today but was fine yesterday. Is there scheduled maintenance or something?",
+    "customer_tier": "pro",
+    "timestamp": 9
+  },
+  {
+    "id": "ticket_h010",
+    "text": "CRITICAL: Storage system down. ALL customer data potentially at risk. Response needed NOW!",
+    "customer_tier": "enterprise",
+    "timestamp": 10
+  }
+]

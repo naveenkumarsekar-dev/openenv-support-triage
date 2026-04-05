@@ -1,0 +1,126 @@
+name: support-triage-env
+version: 1.0.0
+description: AI customer support ticket triage environment for training autonomous agents
+author: OpenEnv Community
+
+# Environment entry point
+entry_point: env.environment:SupportEnv
+
+# Data models with full specifications
+models:
+  observation:
+    class: env.models:Observation
+    fields:
+      - name: current_ticket
+        type: Ticket | None
+        description: Currently active support ticket for agent decision
+      - name: remaining_tickets
+        type: integer
+        description: Count of tickets left in episode
+      - name: history
+        type: array
+        description: Log of previous actions taken in episode
+      - name: episode_step
+        type: integer
+        description: Current step number in episode
+  
+  action:
+    class: env.models:Action
+    fields:
+      - name: action_type
+        type: enum
+        values: ["respond", "escalate", "ignore"]
+        description: Primary decision for ticket
+      - name: response_text
+        type: string
+        description: Optional response content for respond action
+      - name: priority
+        type: enum | None
+        values: ["low", "medium", "high"]
+        description: Optional priority level for escalated tickets
+  
+  reward:
+    class: env.models:Reward
+    fields:
+      - name: score
+        type: float
+        range: [0.0, 1.0]
+        description: Numerical reward signal
+      - name: reason
+        type: string
+        description: Human-readable explanation
+      - name: components
+        type: object
+        description: Breakdown of reward computation
+
+# Task definitions with difficulty levels
+tasks:
+  - name: tickets_easy
+    description: Simple, clear-cut support tickets. Good for initial learning.
+    difficulty: easy
+    data_file: data/tickets_easy.json
+    expected_accuracy: 0.95
+  
+  - name: tickets_medium
+    description: Mixed tickets with some ambiguity. Requires action discrimination.
+    difficulty: medium
+    data_file: data/tickets_medium.json
+    expected_accuracy: 0.85
+  
+  - name: tickets_hard
+    description: Complex, noisy tickets with mixed intents. Challenging reasoning required.
+    difficulty: hard
+    data_file: data/tickets_hard.json
+    expected_accuracy: 0.75
+
+# Evaluation configuration
+evaluation:
+  grader:
+    class: env.graders_new:grade_episode
+    metrics:
+      - accuracy
+      - partial_accuracy
+      - category_scores
+  
+  baseline_expected_score: 0.80
+
+# Reward configuration
+reward:
+  compute_function: env.reward_new:compute_reward
+  signals:
+    - name: spam_handling
+      weight: 0.1
+      description: Correctly identifying and ignoring spam
+    - name: refund_escalation
+      weight: 0.2
+      description: Correctly escalating refund requests
+    - name: urgency_handling
+      weight: 0.3
+      description: Correct action for urgent tickets
+    - name: response_quality
+      weight: 0.15
+      description: Quality of response text
+    - name: tier_weighting
+      weight: 0.25
+      description: Customer tier consideration
+
+# Environment dynamics
+episode_config:
+  max_steps: null
+  termination_condition: all_tickets_processed
+  observation_spaces:
+    ticket_text_max_length: 1000
+    max_remaining_tickets: 100
+  
+# Validation and quality checks
+validation:
+  check_observation_none: true
+  check_reward_bounds: true
+  check_action_type_valid: true
+
+# Docker configuration
+docker:
+  base_image: python:3.10-slim
+  requirements_file: requirements.txt
+  working_directory: /app
+  entrypoint: ["python", "baseline.py"]

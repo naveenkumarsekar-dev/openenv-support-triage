@@ -1,0 +1,32 @@
+[
+  {
+    "id": "ticket_001",
+    "text": "I want a refund for my last payment. I was charged twice.",
+    "customer_tier": "pro",
+    "timestamp": 1
+  },
+  {
+    "id": "ticket_002",
+    "text": "Buy cheap crypto now!!! Limited offer!!!",
+    "customer_tier": "free",
+    "timestamp": 2
+  },
+  {
+    "id": "ticket_003",
+    "text": "My login is not working. Please help asap!",
+    "customer_tier": "free",
+    "timestamp": 3
+  },
+  {
+    "id": "ticket_004",
+    "text": "Congratulations!!! You won a free iPhone. Click here.",
+    "customer_tier": "free",
+    "timestamp": 4
+  },
+  {
+    "id": "ticket_005",
+    "text": "Can you help me update my billing details?",
+    "customer_tier": "pro",
+    "timestamp": 5
+  }
+]

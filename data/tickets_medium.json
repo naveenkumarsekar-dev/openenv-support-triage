@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ticket_m001",
+    "text": "My API requests are failing intermittently since morning. Please check.",
+    "customer_tier": "pro",
+    "timestamp": 1
+  },
+  {
+    "id": "ticket_m002",
+    "text": "URGENT: Our dashboard is down for all users. This is critical.",
+    "customer_tier": "enterprise",
+    "timestamp": 2
+  },
+  {
+    "id": "ticket_m003",
+    "text": "Hey, just wanted to know if you support PayPal payments?",
+    "customer_tier": "free",
+    "timestamp": 3
+  },
+  {
+    "id": "ticket_m004",
+    "text": "I was billed incorrectly this month. Need clarification on charges.",
+    "customer_tier": "pro",
+    "timestamp": 4
+  },
+  {
+    "id": "ticket_m005",
+    "text": "asap pls!! site not loading properly. Failed to load multiple times.",
+    "customer_tier": "free",
+    "timestamp": 5
+  },
+  {
+    "id": "ticket_m006",
+    "text": "Need reimbursement for accidental double charge. Need money back ASAP.",
+    "customer_tier": "enterprise",
+    "timestamp": 6
+  },
+  {
+    "id": "ticket_m007",
+    "text": "Feature request: could you add dark mode? Would be nice to have.",
+    "customer_tier": "free",
+    "timestamp": 7
+  },
+  {
+    "id": "ticket_m008",
+    "text": "Win free cash! Buy viagra here! Limited offer! CLICK NOW!!!",
+    "customer_tier": "free",
+    "timestamp": 8
+  }
+]
